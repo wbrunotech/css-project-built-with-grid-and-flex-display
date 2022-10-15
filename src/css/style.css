@@ -1,0 +1,183 @@
+html {
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "header header header header"
+                         "hero hero hero hero"
+                         "about about about about"
+                "services services services services" 
+                "projects projects projects projects"
+                "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+}
+
+/* header */
+
+.header{
+    grid-area: header;
+    background-color: #ffffff;
+}
+
+.header .header-container{
+    display: flex;
+    padding: 20px 20px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+}
+
+.header h1{
+    font-size: 3rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.header a:hover h1{
+    color: coral;
+}
+
+/* hero */
+
+.hero {
+    grid-area: hero;
+    height: 89vh;
+    background: url('../images/background1.png') 
+    center center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+}
+
+.hero h2{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: rgb(184, 150, 120);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.hero:after{
+    content: url('../images/seta_preta.png');
+    height: 35px;
+    bottom: 40px;
+    position: absolute;
+    animation: downarrow 0.6s infinite alternate 
+    ease-in-out;
+}
+
+@-webkit-keyframes downarrow{
+    0% { -webkit-transform: translateY(0); 
+    opacity: 0.4; }
+    100% { -webkit-transform: translateY(0.4em); 
+    opacity: 0.9; }
+}
+
+@media(max-width: 425px){
+    .hero{
+        height: 60vh;
+    }
+
+    .hero h2{
+        font-size: 2.5rem;
+    }
+}
+
+/* about */
+
+.about{
+    grid-area: about;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+    max-width: var(--max-width-size);
+    margin: 0 auto;
+}
+
+.about .item{
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.about .item h3{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.about .item p{
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 30px 0;
+}
+
+.about .image{
+    height: 100%;
+    width: 100%;
+}
+
+.about .item .btn-know-more{
+    font-size: 1.6rem;
+    align-self: flex-start;
+}
+
+.about .item .btn-know-more:hover{
+    font-weight: 700;
+}
+
+.about .image.right{
+    background: url('../images/bridge.png') center 
+    center no-repeat;
+    background-size: cover;
+}
+
+.about .image.left{
+    background: url('../images/sky.png') center 
+    center no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 425px){
+    .about .item {
+        text-align: center;
+    }
+
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+
+/* services */
+
+.services{
+    grid-area: services;
+    display: grid;
+    
+}
+
+/* projects */
+
+.projects{
+    grid-area: projects;
+    background-color: darkmagenta;
+}
+
+/* footer */
+
+.footer{
+    grid-area: footer;
+    background-color: darkslategray;
+}
